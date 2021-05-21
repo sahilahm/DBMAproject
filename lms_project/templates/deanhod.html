@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block child_block %}
+<div>
+        <h1> Your Portal</h1>
+        <a class="button" id="logout-button" href ={% url 'logout' data.id %} >logout</a><br>
+        <br>
+<br><br><br><br><br>
+
+        <a class="portal-button" href = {% url 'leaves' data.id  %}>Number of leaves remaining</a><br>
+        <br>
+        <a class="portal-button" href ={% url 'application' data.id  %} >Click here to start an application</a><br>
+        <br>
+        <a class="portal-button" href ={% url 'show' data.id %} >Check status of running application</a><br>
+        <br>
+        <a class="portal-button" href ={% url 'status' data.id %}>pending applications</a><br>
+        <br>
+      </div>
+{% endblock %}
+
+
+

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block child_block %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for i in data %}
+     <h3> given id {{i.id}}</h3>
+     <h3> professor id {{i.pro_id}}</h3>
+     <h3>date from {{i.datefrom}}</h3>
+     <h3>date to {{i.dateto}}</h3>
+     <h3>number of days {{i.num_of_days}}</h3>
+     <h3> reason {{i.reason}}</h3>
+<form action = "status", method = "POST">
+    {% csrf_token %}
+    <input type="checkbox" id="Approval" name="status" value="Approval">
+    <label for="status">Approval</label><br>
+    <input type="checkbox" id="Rejected" name="status" value="Rejected">
+    <label for="status">Rejected</label><br>
+    <input type="text"  name="reason" placeholder ="reason"><br>
+    <input type="text"  name="id" placeholder ="application id"><br>
+    <input type="submit" value="Submit">
+
+  </form>
+
+  {% endfor %}
+</body>
+</html>
+{% endblock %}

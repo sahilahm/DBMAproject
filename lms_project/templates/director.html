@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block child_block %}
+
+<div>
+        <h1> Your Portal</h1>
+        <a class="button" href ={% url 'logout' data.id %} >logout</a><br>
+        <br>
+<br><br><br><br><br>
+
+        <a href ={% url 'status' data.id %}>pending applications</a><br>
+        <br>
+        <a href ={% url 'changecsehod' data.id %}>Change CSE Hod</a><br>
+        <br>
+        <a href ={% url 'changeeehod' data.id %}>Change EE Hod</a><br>
+        <br>
+        <a href ={% url 'changemechod' data.id %}>Change MEC Hod</a><br>
+        <br>
+        <a href ={% url 'changedean' data.id %}>Change DEAN</a><br>
+        <br>
+      </div>
+{% endblock %}
